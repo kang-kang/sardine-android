@@ -16,7 +16,6 @@
 
 package com.googlecode.sardine.impl.methods;
 
-import org.apache.http.HttpHeaders;
 import org.apache.http.client.methods.HttpRequestBase;
 
 import java.net.URI;
@@ -32,8 +31,8 @@ public class HttpMove extends HttpRequestBase
 
 	public HttpMove(URI sourceUrl, URI destinationUrl)
 	{
-		this.setHeader(HttpHeaders.DESTINATION, destinationUrl.toString());
-		this.setHeader(HttpHeaders.OVERWRITE, "T");
+		this.setHeader("Destination", destinationUrl.toString());
+		this.setHeader("Overwrite", "T");
 		this.setURI(sourceUrl);
 	}
 

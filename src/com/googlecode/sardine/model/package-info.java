@@ -8,5 +8,5 @@
 /**
  * Generated classes from the WebDAV XML schema.
  */
-@javax.xml.bind.annotation.XmlSchema(namespace = "DAV:", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+//@javax.xml.bind.annotation.XmlSchema(namespace = "DAV:", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package com.googlecode.sardine.model;

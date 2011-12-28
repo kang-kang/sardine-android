@@ -10,11 +10,11 @@ package com.googlecode.sardine.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+//import javax.xml.bind.annotation.XmlAccessType;
+//import javax.xml.bind.annotation.XmlAccessorType;
+//import javax.xml.bind.annotation.XmlAnyElement;
+//import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlType;
 import org.w3c.dom.Element;
 
 
@@ -47,11 +47,11 @@ import org.w3c.dom.Element;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-
-})
-@XmlRootElement(name = "prop")
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//
+//})
+//@XmlRootElement(name = "prop")
 public class Prop {
 
     protected Creationdate creationdate;
@@ -64,7 +64,7 @@ public class Prop {
     protected Lockdiscovery lockdiscovery;
     protected Resourcetype resourcetype;
     protected Supportedlock supportedlock;
-    @XmlAnyElement
+//    @XmlAnyElement
     protected List<Element> any;
 
     /**

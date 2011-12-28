@@ -10,11 +10,11 @@ package com.googlecode.sardine.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+//import javax.xml.bind.annotation.XmlAccessType;
+//import javax.xml.bind.annotation.XmlAccessorType;
+//import javax.xml.bind.annotation.XmlAnyElement;
+//import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlType;
 import org.w3c.dom.Element;
 
 
@@ -38,16 +38,16 @@ import org.w3c.dom.Element;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "collection",
-    "any"
-})
-@XmlRootElement(name = "resourcetype")
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//    "collection",
+//    "any"
+//})
+//@XmlRootElement(name = "resourcetype")
 public class Resourcetype {
 
     protected Collection collection;
-    @XmlAnyElement
+//    @XmlAnyElement
     protected List<Element> any;
 
     /**

@@ -8,10 +8,10 @@
 
 package com.googlecode.sardine.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+//import javax.xml.bind.annotation.XmlAccessType;
+//import javax.xml.bind.annotation.XmlAccessorType;
+//import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -35,13 +35,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "allprop",
-    "propname",
-    "prop"
-})
-@XmlRootElement(name = "propfind")
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//    "allprop",
+//    "propname",
+//    "prop"
+//})
+//@XmlRootElement(name = "propfind")
 public class Propfind {
 
     protected Allprop allprop;

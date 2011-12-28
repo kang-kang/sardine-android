@@ -10,12 +10,12 @@ package com.googlecode.sardine.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+//import javax.xml.bind.annotation.XmlAccessType;
+//import javax.xml.bind.annotation.XmlAccessorType;
+//import javax.xml.bind.annotation.XmlElement;
+//import javax.xml.bind.annotation.XmlElements;
+//import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -38,17 +38,17 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "removeOrSet"
-})
-@XmlRootElement(name = "propertyupdate")
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//    "removeOrSet"
+//})
+//@XmlRootElement(name = "propertyupdate")
 public class Propertyupdate {
 
-    @XmlElements({
-        @XmlElement(name = "remove", type = Remove.class),
-        @XmlElement(name = "set", type = Set.class)
-    })
+//    @XmlElements({
+//        @XmlElement(name = "remove", type = Remove.class),
+//        @XmlElement(name = "set", type = Set.class)
+//    })
     protected List<Object> removeOrSet;
 
     /**

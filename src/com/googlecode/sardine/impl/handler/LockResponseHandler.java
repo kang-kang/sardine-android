@@ -56,7 +56,8 @@ public class LockResponseHandler extends ValidatingResponseHandler<String>
 	protected String getToken(InputStream stream)
 			throws IOException
 	{
-		Prop prop = SardineUtil.unmarshal(stream);
-		return prop.getLockdiscovery().getActivelock().iterator().next().getLocktoken().getHref().iterator().next();
+		return "XXX";
+		//Prop prop = SardineUtil.unmarshal(stream);
+		//return prop.getLockdiscovery().getActivelock().iterator().next().getLocktoken().getHref().iterator().next();
 	}
 }

@@ -8,11 +8,11 @@
 
 package com.googlecode.sardine.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+//import javax.xml.bind.annotation.XmlAccessType;
+//import javax.xml.bind.annotation.XmlAccessorType;
+//import javax.xml.bind.annotation.XmlElement;
+//import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -37,19 +37,19 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "prop",
-    "status",
-    "error",
-    "responsedescription"
-})
-@XmlRootElement(name = "propstat")
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//    "prop",
+//    "status",
+//    "error",
+//    "responsedescription"
+//})
+//@XmlRootElement(name = "propstat")
 public class Propstat {
 
-    @XmlElement(required = true)
+//    @XmlElement(required = true)
     protected Prop prop;
-    @XmlElement(required = true)
+//    @XmlElement(required = true)
     protected String status;
     protected Error error;
     protected String responsedescription;

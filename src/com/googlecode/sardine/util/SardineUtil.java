@@ -9,10 +9,10 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+//import javax.xml.bind.JAXBContext;
+//import javax.xml.bind.JAXBException;
+//import javax.xml.bind.Marshaller;
+//import javax.xml.bind.Unmarshaller;
 import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -65,19 +65,19 @@ public class SardineUtil
 	/**
 	 * Reusable context for marshalling and unmarshalling
 	 */
-	private static final JAXBContext JAXB_CONTEXT;
+//	private static final JAXBContext JAXB_CONTEXT;
 
-	static
-	{
-		try
-		{
-			JAXB_CONTEXT = JAXBContext.newInstance(ObjectFactory.class);
-		}
-		catch (JAXBException e)
-		{
-			throw new RuntimeException(e);
-		}
-	}
+//	static
+//	{
+//		try
+//		{
+//			JAXB_CONTEXT = JAXBContext.newInstance(ObjectFactory.class);
+//		}
+//		catch (JAXBException e)
+//		{
+//			throw new RuntimeException(e);
+//		}
+//	}
 
 	/**
 	 * Date formats using for Date parsing.
@@ -183,63 +183,63 @@ public class SardineUtil
 		return date;
 	}
 
-	@SuppressWarnings("unchecked")
-	public static <T> T unmarshal(InputStream in) throws IOException
-	{
-		Unmarshaller unmarshaller = createUnmarshaller();
-		try
-		{
-			XMLReader reader = XMLReaderFactory.createXMLReader();
-			try
-			{
-				reader.setFeature(
-						"http://xml.org/sax/features/external-general-entities", Boolean.FALSE);
-			}
-			catch (SAXException e)
-			{
-				; //Not all parsers will support this attribute
-			}
-			try
-			{
-				reader.setFeature(
-						"http://xml.org/sax/features/external-parameter-entities", Boolean.FALSE);
-			}
-			catch (SAXException e)
-			{
-				; //Not all parsers will support this attribute
-			}
-			try
-			{
-				reader.setFeature(
-						"http://apache.org/xml/features/nonvalidating/load-external-dtd", Boolean.FALSE);
-			}
-			catch (SAXException e)
-			{
-				; //Not all parsers will support this attribute
-			}
-			try
-			{
-				reader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, Boolean.TRUE);
-			}
-			catch (SAXException e)
-			{
-				; //Not all parsers will support this attribute
-			}
-			return (T) unmarshaller.unmarshal(new SAXSource(reader, new InputSource(in)));
-		}
-		catch (SAXException e)
-		{
-			throw new RuntimeException(e.getMessage(), e);
-		}
-		catch (JAXBException e)
-		{
-			// Server does not return any valid WebDAV XML that matches our JAXB context
-			IOException failure = new IOException("Not a valid DAV response");
-			// Backward compatibility
-			failure.initCause(e);
-			throw failure;
-		}
-	}
+//	@SuppressWarnings("unchecked")
+//	public static <T> T unmarshal(InputStream in) throws IOException
+//	{
+//		Unmarshaller unmarshaller = createUnmarshaller();
+//		try
+//		{
+//			XMLReader reader = XMLReaderFactory.createXMLReader();
+//			try
+//			{
+//				reader.setFeature(
+//						"http://xml.org/sax/features/external-general-entities", Boolean.FALSE);
+//			}
+//			catch (SAXException e)
+//			{
+//				; //Not all parsers will support this attribute
+//			}
+//			try
+//			{
+//				reader.setFeature(
+//						"http://xml.org/sax/features/external-parameter-entities", Boolean.FALSE);
+//			}
+//			catch (SAXException e)
+//			{
+//				; //Not all parsers will support this attribute
+//			}
+//			try
+//			{
+//				reader.setFeature(
+//						"http://apache.org/xml/features/nonvalidating/load-external-dtd", Boolean.FALSE);
+//			}
+//			catch (SAXException e)
+//			{
+//				; //Not all parsers will support this attribute
+//			}
+//			try
+//			{
+//				reader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, Boolean.TRUE);
+//			}
+//			catch (SAXException e)
+//			{
+//				; //Not all parsers will support this attribute
+//			}
+//			return (T) unmarshaller.unmarshal(new SAXSource(reader, new InputSource(in)));
+//		}
+//		catch (SAXException e)
+//		{
+//			throw new RuntimeException(e.getMessage(), e);
+//		}
+//		catch (JAXBException e)
+//		{
+//			// Server does not return any valid WebDAV XML that matches our JAXB context
+//			IOException failure = new IOException("Not a valid DAV response");
+//			// Backward compatibility
+//			failure.initCause(e);
+//			throw failure;
+//		}
+//	}
 
 	/**
 	 * Creates an {@link Unmarshaller} from the {@link SardineUtil#JAXB_CONTEXT}.
@@ -248,33 +248,33 @@ public class SardineUtil
 	 * @return A new unmarshaller
 	 * @throws IOException When there is a JAXB error
 	 */
-	private static Unmarshaller createUnmarshaller()
-	{
-		try
-		{
-			return JAXB_CONTEXT.createUnmarshaller();
-		}
-		catch (JAXBException e)
-		{
-			throw new RuntimeException(e.getMessage(), e);
-		}
-	}
+//	private static Unmarshaller createUnmarshaller()
+//	{
+//		try
+//		{
+//			return JAXB_CONTEXT.createUnmarshaller();
+//		}
+//		catch (JAXBException e)
+//		{
+//			throw new RuntimeException(e.getMessage(), e);
+//		}
+//	}
 
 	/**
 	 * @return A new marshaller
 	 * @throws IOException When there is a JAXB error
 	 */
-	private static Marshaller createMarshaller()
-	{
-		try
-		{
-			return JAXB_CONTEXT.createMarshaller();
-		}
-		catch (JAXBException e)
-		{
-			throw new RuntimeException(e.getMessage(), e);
-		}
-	}
+//	private static Marshaller createMarshaller()
+//	{
+//		try
+//		{
+//			return JAXB_CONTEXT.createMarshaller();
+//		}
+//		catch (JAXBException e)
+//		{
+//			throw new RuntimeException(e.getMessage(), e);
+//		}
+//	}
 
 	/**
 	 * @return New XML document from the default document builder factory.
@@ -299,20 +299,20 @@ public class SardineUtil
 	 * @return The XML string for the WebDAV request
 	 * @throws IOException When there is a JAXB error
 	 */
-	public static String toXml(Object jaxbElement)
-	{
-		StringWriter writer = new StringWriter();
-		try
-		{
-			Marshaller marshaller = createMarshaller();
-			marshaller.marshal(jaxbElement, writer);
-		}
-		catch (JAXBException e)
-		{
-			throw new RuntimeException(e.getMessage(), e);
-		}
-		return writer.toString();
-	}
+//	public static String toXml(Object jaxbElement)
+//	{
+//		StringWriter writer = new StringWriter();
+//		try
+//		{
+//			Marshaller marshaller = createMarshaller();
+//			marshaller.marshal(jaxbElement, writer);
+//		}
+//		catch (JAXBException e)
+//		{
+//			throw new RuntimeException(e.getMessage(), e);
+//		}
+//		return writer.toString();
+//	}
 
 	/** */
 	public static Map<QName, String> toQName(Map<String, String> setProps)

@@ -18,7 +18,6 @@ package com.googlecode.sardine.impl.methods;
 
 import java.net.URI;
 
-import org.apache.http.HttpHeaders;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.protocol.HTTP;
 
@@ -37,7 +36,7 @@ public class HttpLock extends HttpEntityEnclosingRequestBase
 	public HttpLock(URI url)
 	{
 		this.setURI(url);
-		this.setHeader(HttpHeaders.CONTENT_TYPE, "text/xml" + HTTP.CHARSET_PARAM + HTTP.UTF_8.toLowerCase());
+		this.setHeader("Content-Type", "text/xml" + HTTP.CHARSET_PARAM + HTTP.UTF_8.toLowerCase());
 	}
 
 	@Override
@@ -58,7 +57,7 @@ public class HttpLock extends HttpEntityEnclosingRequestBase
 	 */
 	public void setDepth(String depth)
 	{
-		this.setHeader(HttpHeaders.DEPTH, depth);
+		this.setHeader("Depth", depth);
 	}
 
 	/**
@@ -67,7 +66,7 @@ public class HttpLock extends HttpEntityEnclosingRequestBase
 	 */
 	public void setTimeout(int seconds)
 	{
-		this.setHeader(HttpHeaders.TIMEOUT, "Second-" + seconds);
+		this.setHeader("Timeout", "Second-" + seconds);
 	}
 
 	/**
@@ -75,6 +74,6 @@ public class HttpLock extends HttpEntityEnclosingRequestBase
 	 */
 	public void setInfinite()
 	{
-		this.setHeader(HttpHeaders.TIMEOUT, "Infinite");
+		this.setHeader("Timeout", "Infinite");
 	}
 }

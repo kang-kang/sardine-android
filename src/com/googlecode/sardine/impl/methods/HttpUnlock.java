@@ -18,7 +18,6 @@ package com.googlecode.sardine.impl.methods;
 
 import java.net.URI;
 
-import org.apache.http.HttpHeaders;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.protocol.HTTP;
 
@@ -49,7 +48,7 @@ public class HttpUnlock extends HttpRequestBase
 	public HttpUnlock(URI url, String token)
 	{
 		this.setURI(url);
-		this.setHeader(HttpHeaders.CONTENT_TYPE, "text/xml" + HTTP.CHARSET_PARAM + HTTP.UTF_8.toLowerCase());
+		this.setHeader("Content-Type", "text/xml" + HTTP.CHARSET_PARAM + HTTP.UTF_8.toLowerCase());
 		this.setHeader("Lock-Token", "<" + token + ">");
 	}
 

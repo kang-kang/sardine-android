@@ -16,8 +16,6 @@ import java.util.Map;
 
 import javax.xml.namespace.QName;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 import com.googlecode.sardine.model.Collection;
@@ -30,6 +28,7 @@ import com.googlecode.sardine.model.Multistatus;
 import com.googlecode.sardine.model.Propstat;
 import com.googlecode.sardine.model.Resourcetype;
 import com.googlecode.sardine.model.Response;
+import com.googlecode.sardine.util.Logger;
 import com.googlecode.sardine.util.SardineUtil;
 
 /**
@@ -40,7 +39,7 @@ import com.googlecode.sardine.util.SardineUtil;
  */
 public class DavResource
 {
-    private static Logger log = LoggerFactory.getLogger(DavResource.class);
+    private static Logger log = new Logger();
 
 	/**
 	 * The default content-type if {@link Getcontenttype} is not set in the {@link Multistatus} response.

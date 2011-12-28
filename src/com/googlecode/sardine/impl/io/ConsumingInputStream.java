@@ -98,6 +98,6 @@ public class ConsumingInputStream extends InputStream
 	@Override
 	public void close() throws IOException
 	{
-		EntityUtils.consume(response.getEntity());
+		response.getEntity().consumeContent();
 	}
 }

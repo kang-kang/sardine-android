@@ -8,9 +8,9 @@
 
 package com.googlecode.sardine.model;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
-import javax.xml.bind.annotation.XmlRegistry;
+//import javax.xml.bind.JAXBElement;
+//import javax.xml.bind.annotation.XmlElementDecl;
+//import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
 
 
@@ -28,7 +28,7 @@ import javax.xml.namespace.QName;
  * provided in this class.
  * 
  */
-@XmlRegistry
+//@XmlRegistry
 public class ObjectFactory {
 
     private final static QName _Status_QNAME = new QName("DAV:", "status");
@@ -346,63 +346,63 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "DAV:", name = "status")
-    public JAXBElement<String> createStatus(String value) {
-        return new JAXBElement<String>(_Status_QNAME, String.class, null, value);
-    }
+//    @XmlElementDecl(namespace = "DAV:", name = "status")
+//    public JAXBElement<String> createStatus(String value) {
+//        return new JAXBElement<String>(_Status_QNAME, String.class, null, value);
+//    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "DAV:", name = "dst")
-    public JAXBElement<String> createDst(String value) {
-        return new JAXBElement<String>(_Dst_QNAME, String.class, null, value);
-    }
+//    @XmlElementDecl(namespace = "DAV:", name = "dst")
+//    public JAXBElement<String> createDst(String value) {
+//        return new JAXBElement<String>(_Dst_QNAME, String.class, null, value);
+//    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "DAV:", name = "src")
-    public JAXBElement<String> createSrc(String value) {
-        return new JAXBElement<String>(_Src_QNAME, String.class, null, value);
-    }
+//    @XmlElementDecl(namespace = "DAV:", name = "src")
+//    public JAXBElement<String> createSrc(String value) {
+//        return new JAXBElement<String>(_Src_QNAME, String.class, null, value);
+//    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "DAV:", name = "timeout")
-    public JAXBElement<String> createTimeout(String value) {
-        return new JAXBElement<String>(_Timeout_QNAME, String.class, null, value);
-    }
+//    @XmlElementDecl(namespace = "DAV:", name = "timeout")
+//    public JAXBElement<String> createTimeout(String value) {
+//        return new JAXBElement<String>(_Timeout_QNAME, String.class, null, value);
+//    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "DAV:", name = "depth")
-    public JAXBElement<String> createDepth(String value) {
-        return new JAXBElement<String>(_Depth_QNAME, String.class, null, value);
-    }
+//    @XmlElementDecl(namespace = "DAV:", name = "depth")
+//    public JAXBElement<String> createDepth(String value) {
+//        return new JAXBElement<String>(_Depth_QNAME, String.class, null, value);
+//    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "DAV:", name = "responsedescription")
-    public JAXBElement<String> createResponsedescription(String value) {
-        return new JAXBElement<String>(_Responsedescription_QNAME, String.class, null, value);
-    }
+//    @XmlElementDecl(namespace = "DAV:", name = "responsedescription")
+//    public JAXBElement<String> createResponsedescription(String value) {
+//        return new JAXBElement<String>(_Responsedescription_QNAME, String.class, null, value);
+//    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "DAV:", name = "href")
-    public JAXBElement<String> createHref(String value) {
-        return new JAXBElement<String>(_Href_QNAME, String.class, null, value);
-    }
+//    @XmlElementDecl(namespace = "DAV:", name = "href")
+//    public JAXBElement<String> createHref(String value) {
+//        return new JAXBElement<String>(_Href_QNAME, String.class, null, value);
+//    }
 
 }
