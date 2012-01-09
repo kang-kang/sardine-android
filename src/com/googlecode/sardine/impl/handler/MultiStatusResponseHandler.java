@@ -16,12 +16,18 @@
 
 package com.googlecode.sardine.impl.handler;
 
+import android.util.Log;
+import cn.lzu.edu.webdav.MS;
+import cn.lzu.edu.webdav.Response;
+
 import com.googlecode.sardine.impl.SardineException;
 import com.googlecode.sardine.model.Multistatus;
 import com.googlecode.sardine.util.SardineUtil;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
+import org.simpleframework.xml.Serializer;
+import org.simpleframework.xml.core.Persister;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,7 +66,20 @@ public class MultiStatusResponseHandler extends ValidatingResponseHandler<Multis
 	protected Multistatus getMultistatus(InputStream stream)
 			throws IOException
 	{
+		//return null;
+		Serializer serializer = new Persister();
+
+		// deserializer
+		try {
+			Multistatus multistatus = serializer.read(Multistatus.class, stream, false);
+			//Log.i(TAG, "Read multistatus " + multistatus.toString());
+			//for (Response res : multistatus.getResponse()) {
+				//Log.i(TAG, "Response " + res.toString());
+			//}
+			return multistatus;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
-		//return SardineUtil.unmarshal(stream);
 	}
 }

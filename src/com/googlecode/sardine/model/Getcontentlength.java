@@ -16,6 +16,8 @@ import java.util.List;
 //import javax.xml.bind.annotation.XmlRootElement;
 //import javax.xml.bind.annotation.XmlType;
 
+import org.simpleframework.xml.ElementList;
+
 
 /**
  * <p>Java class for anonymous complex type.
@@ -43,6 +45,7 @@ import java.util.List;
 public class Getcontentlength {
 
 //    @XmlMixed
+	@ElementList
     protected List<String> content;
 
     /**

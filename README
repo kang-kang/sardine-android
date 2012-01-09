@@ -1,6 +1,7 @@
-Porting of sardine project, an easy to use webdav client for java.
+1.0 beta!
+
+Porting of sardine project for android, sardine is an easy to use webdav client for java.
 This project is under developing heavily. 
-Now put/get/delete/copy/mkdir is working, list will work soon, other feature is missing.
 
 License:
 Apache License, Version 2.0

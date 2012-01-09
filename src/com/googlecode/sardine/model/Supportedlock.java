@@ -15,6 +15,8 @@ import java.util.List;
 //import javax.xml.bind.annotation.XmlRootElement;
 //import javax.xml.bind.annotation.XmlType;
 
+import org.simpleframework.xml.ElementList;
+
 
 /**
  * <p>Java class for anonymous complex type.
@@ -42,9 +44,10 @@ import java.util.List;
 //@XmlRootElement(name = "supportedlock")
 public class Supportedlock {
 
+	/*@ElementList
     protected List<Lockentry> lockentry;
 
-    /**
+    *//**
      * Gets the value of the lockentry property.
      * 
      * <p>
@@ -65,12 +68,12 @@ public class Supportedlock {
      * {@link Lockentry }
      * 
      * 
-     */
+     *//*
     public List<Lockentry> getLockentry() {
         if (lockentry == null) {
             lockentry = new ArrayList<Lockentry>();
         }
         return this.lockentry;
     }
-
+*/
 }

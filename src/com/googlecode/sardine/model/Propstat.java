@@ -8,6 +8,8 @@
 
 package com.googlecode.sardine.model;
 
+import org.simpleframework.xml.Element;
+
 //import javax.xml.bind.annotation.XmlAccessType;
 //import javax.xml.bind.annotation.XmlAccessorType;
 //import javax.xml.bind.annotation.XmlElement;
@@ -48,10 +50,14 @@ package com.googlecode.sardine.model;
 public class Propstat {
 
 //    @XmlElement(required = true)
+	@Element
     protected Prop prop;
 //    @XmlElement(required = true)
+	@Element
     protected String status;
+	@Element (required = false)
     protected Error error;
+	@Element (required = false)
     protected String responsedescription;
 
     /**

@@ -15,7 +15,8 @@ import java.util.List;
 //import javax.xml.bind.annotation.XmlAnyElement;
 //import javax.xml.bind.annotation.XmlRootElement;
 //import javax.xml.bind.annotation.XmlType;
-import org.w3c.dom.Element;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
 
 
 /**
@@ -46,9 +47,11 @@ import org.w3c.dom.Element;
 //@XmlRootElement(name = "resourcetype")
 public class Resourcetype {
 
-    protected Collection collection;
+    @Element (required = false)
+	private Collection collection;
 //    @XmlAnyElement
-    protected List<Element> any;
+//    @ElementList
+//    private List<Element> any;
 
     /**
      * Gets the value of the collection property.
@@ -96,11 +99,11 @@ public class Resourcetype {
      * 
      * 
      */
-    public List<Element> getAny() {
+   /* public List<Element> getAny() {
         if (any == null) {
             any = new ArrayList<Element>();
         }
         return this.any;
-    }
+    }*/
 
 }

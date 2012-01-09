@@ -84,7 +84,7 @@ import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.VersionInfo;
-import org.w3c.dom.Element;
+import org.simpleframework.xml.Element;
 
 import com.googlecode.sardine.DavResource;
 import com.googlecode.sardine.Sardine;
@@ -386,7 +386,6 @@ public class SardineImpl implements Sardine {
 	 */
 	public List<DavResource> list(String url, int depth) throws IOException {
 		log.warn("list");
-
 		HttpPropFind entity = new HttpPropFind(url);
 		entity.setDepth(Integer.toString(depth));
 		Propfind body = new Propfind();
@@ -396,14 +395,16 @@ public class SardineImpl implements Sardine {
 		Multistatus multistatus = this.execute(entity,
 				new MultiStatusResponseHandler());
 		List<Response> responses = multistatus.getResponse();
+		log.warn("getResponse");
 		List<DavResource> resources = new ArrayList<DavResource>(
 				responses.size());
 		for (Response response : responses) {
+//			log.warn("LLL " + response.getHref());
 			try {
 				resources.add(new DavResource(response));
 			} catch (URISyntaxException e) {
 				log.warn(String.format("Ignore resource with invalid URI %s",
-						response.getHref().get(0)));
+						response.getHref()));
 			}
 		}
 		return resources;
@@ -430,7 +431,7 @@ public class SardineImpl implements Sardine {
 	 */
 	public List<DavResource> patch(String url, Map<QName, String> setProps,
 			List<QName> removeProps) throws IOException {
-		HttpPropPatch entity = new HttpPropPatch(url);
+		/*HttpPropPatch entity = new HttpPropPatch(url);
 		// Build WebDAV <code>PROPPATCH</code> entity.
 		Propertyupdate body = new Propertyupdate();
 		// Add properties
@@ -461,20 +462,21 @@ public class SardineImpl implements Sardine {
 			remove.setProp(prop);
 		}
 		// entity.setEntity(new StringEntity(SardineUtil.toXml(body), UTF_8));
-		Multistatus multistatus = this.execute(entity,
-				new MultiStatusResponseHandler());
-		List<Response> responses = multistatus.getResponse();
+//		MS multistatus = this.execute(entity,
+//				new MultiStatusResponseHandler());
+//		List<Response> responses = multistatus.getResponse();
 		List<DavResource> resources = new ArrayList<DavResource>(
-				responses.size());
-		for (Response response : responses) {
-			try {
-				resources.add(new DavResource(response));
-			} catch (URISyntaxException e) {
-				log.warn(String.format("Ignore resource with invalid URI %s",
-						response.getHref().get(0)));
-			}
-		}
-		return resources;
+				1);
+//		for (Response response : responses) {
+//			try {
+//				resources.add(new DavResource(response));
+//			} catch (URISyntaxException e) {
+//				log.warn(String.format("Ignore resource with invalid URI %s",
+//						response.getHref().get(0)));
+//			}
+//		}
+		return resources;*/
+		return null;
 	}
 
 	/**

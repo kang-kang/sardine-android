@@ -8,6 +8,8 @@
 
 package com.googlecode.sardine.model;
 
+import org.simpleframework.xml.Element;
+
 //import javax.xml.bind.annotation.XmlAccessType;
 //import javax.xml.bind.annotation.XmlAccessorType;
 //import javax.xml.bind.annotation.XmlElement;
@@ -44,8 +46,10 @@ package com.googlecode.sardine.model;
 public class Lockentry {
 
 //    @XmlElement(required = true)
+	@Element
     protected Lockscope lockscope;
 //    @XmlElement(required = true)
+	@Element
     protected Locktype locktype;
 
     /**

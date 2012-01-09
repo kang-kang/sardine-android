@@ -35,5 +35,4 @@ package com.googlecode.sardine.model;
 //@XmlRootElement(name = "collection")
 public class Collection {
 
-
 }

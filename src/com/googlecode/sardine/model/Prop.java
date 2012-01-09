@@ -15,7 +15,8 @@ import java.util.List;
 //import javax.xml.bind.annotation.XmlAnyElement;
 //import javax.xml.bind.annotation.XmlRootElement;
 //import javax.xml.bind.annotation.XmlType;
-import org.w3c.dom.Element;
+
+import org.simpleframework.xml.Element;
 
 
 /**
@@ -54,7 +55,39 @@ import org.w3c.dom.Element;
 //@XmlRootElement(name = "prop")
 public class Prop {
 
-    protected Creationdate creationdate;
+	@Element
+	private Resourcetype resourcetype;
+	@Element
+	private String creationdate;
+	@Element
+	private String getlastmodified;
+	@Element
+	private String getetag;
+	@Element (required = false)
+	private String getcontenttype;
+	
+	public Resourcetype getResourcetype() {
+		return resourcetype;
+	}
+
+	public String getCreationdate() {
+		return creationdate;
+	}
+
+	public String getGetlastmodified() {
+		return getlastmodified;
+	}
+
+	public String getGetetag() {
+		return getetag;
+	}
+
+	public String getGetcontenttype() {
+		return getcontenttype;
+	}
+
+	
+    /*protected Creationdate creationdate;
     protected Displayname displayname;
     protected Getcontentlanguage getcontentlanguage;
     protected Getcontentlength getcontentlength;
@@ -63,249 +96,250 @@ public class Prop {
     protected Getlastmodified getlastmodified;
     protected Lockdiscovery lockdiscovery;
     protected Resourcetype resourcetype;
-    protected Supportedlock supportedlock;
+    protected Supportedlock supportedlock;*/
 //    @XmlAnyElement
+	@Element (required = false)
     protected List<Element> any;
 
-    /**
+/*    *//**
      * Gets the value of the creationdate property.
      * 
      * @return
      *     possible object is
      *     {@link Creationdate }
      *     
-     */
+     *//*
     public Creationdate getCreationdate() {
         return creationdate;
     }
 
-    /**
+    *//**
      * Sets the value of the creationdate property.
      * 
      * @param value
      *     allowed object is
      *     {@link Creationdate }
      *     
-     */
+     *//*
     public void setCreationdate(Creationdate value) {
         this.creationdate = value;
     }
 
-    /**
+    *//**
      * Gets the value of the displayname property.
      * 
      * @return
      *     possible object is
      *     {@link Displayname }
      *     
-     */
+     *//*
     public Displayname getDisplayname() {
         return displayname;
     }
 
-    /**
+    *//**
      * Sets the value of the displayname property.
      * 
      * @param value
      *     allowed object is
      *     {@link Displayname }
      *     
-     */
+     *//*
     public void setDisplayname(Displayname value) {
         this.displayname = value;
     }
 
-    /**
+    *//**
      * Gets the value of the getcontentlanguage property.
      * 
      * @return
      *     possible object is
      *     {@link Getcontentlanguage }
      *     
-     */
+     *//*
     public Getcontentlanguage getGetcontentlanguage() {
         return getcontentlanguage;
     }
 
-    /**
+    *//**
      * Sets the value of the getcontentlanguage property.
      * 
      * @param value
      *     allowed object is
      *     {@link Getcontentlanguage }
      *     
-     */
+     *//*
     public void setGetcontentlanguage(Getcontentlanguage value) {
         this.getcontentlanguage = value;
     }
 
-    /**
+    *//**
      * Gets the value of the getcontentlength property.
      * 
      * @return
      *     possible object is
      *     {@link Getcontentlength }
      *     
-     */
+     *//*
     public Getcontentlength getGetcontentlength() {
         return getcontentlength;
     }
 
-    /**
+    *//**
      * Sets the value of the getcontentlength property.
      * 
      * @param value
      *     allowed object is
      *     {@link Getcontentlength }
      *     
-     */
+     *//*
     public void setGetcontentlength(Getcontentlength value) {
         this.getcontentlength = value;
     }
 
-    /**
+    *//**
      * Gets the value of the getcontenttype property.
      * 
      * @return
      *     possible object is
      *     {@link Getcontenttype }
      *     
-     */
+     *//*
     public Getcontenttype getGetcontenttype() {
         return getcontenttype;
     }
 
-    /**
+    *//**
      * Sets the value of the getcontenttype property.
      * 
      * @param value
      *     allowed object is
      *     {@link Getcontenttype }
      *     
-     */
+     *//*
     public void setGetcontenttype(Getcontenttype value) {
         this.getcontenttype = value;
     }
 
-    /**
+    *//**
      * Gets the value of the getetag property.
      * 
      * @return
      *     possible object is
      *     {@link Getetag }
      *     
-     */
+     *//*
     public Getetag getGetetag() {
         return getetag;
     }
 
-    /**
+    *//**
      * Sets the value of the getetag property.
      * 
      * @param value
      *     allowed object is
      *     {@link Getetag }
      *     
-     */
+     *//*
     public void setGetetag(Getetag value) {
         this.getetag = value;
     }
 
-    /**
+    *//**
      * Gets the value of the getlastmodified property.
      * 
      * @return
      *     possible object is
      *     {@link Getlastmodified }
      *     
-     */
+     *//*
     public Getlastmodified getGetlastmodified() {
         return getlastmodified;
     }
 
-    /**
+    *//**
      * Sets the value of the getlastmodified property.
      * 
      * @param value
      *     allowed object is
      *     {@link Getlastmodified }
      *     
-     */
+     *//*
     public void setGetlastmodified(Getlastmodified value) {
         this.getlastmodified = value;
     }
 
-    /**
+    *//**
      * Gets the value of the lockdiscovery property.
      * 
      * @return
      *     possible object is
      *     {@link Lockdiscovery }
      *     
-     */
+     *//*
     public Lockdiscovery getLockdiscovery() {
         return lockdiscovery;
     }
 
-    /**
+    *//**
      * Sets the value of the lockdiscovery property.
      * 
      * @param value
      *     allowed object is
      *     {@link Lockdiscovery }
      *     
-     */
+     *//*
     public void setLockdiscovery(Lockdiscovery value) {
         this.lockdiscovery = value;
     }
 
-    /**
+    *//**
      * Gets the value of the resourcetype property.
      * 
      * @return
      *     possible object is
      *     {@link Resourcetype }
      *     
-     */
+     *//*
     public Resourcetype getResourcetype() {
         return resourcetype;
     }
 
-    /**
+    *//**
      * Sets the value of the resourcetype property.
      * 
      * @param value
      *     allowed object is
      *     {@link Resourcetype }
      *     
-     */
+     *//*
     public void setResourcetype(Resourcetype value) {
         this.resourcetype = value;
     }
 
-    /**
+    *//**
      * Gets the value of the supportedlock property.
      * 
      * @return
      *     possible object is
      *     {@link Supportedlock }
      *     
-     */
+     *//*
     public Supportedlock getSupportedlock() {
         return supportedlock;
     }
 
-    /**
+    *//**
      * Sets the value of the supportedlock property.
      * 
      * @param value
      *     allowed object is
      *     {@link Supportedlock }
      *     
-     */
+     *//*
     public void setSupportedlock(Supportedlock value) {
         this.supportedlock = value;
-    }
+    }*/
 
     /**
      * Gets the value of the any property.

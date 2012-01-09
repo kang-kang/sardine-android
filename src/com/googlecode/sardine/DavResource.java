@@ -99,7 +99,8 @@ public class DavResource
 	 */
 	public DavResource(Response response) throws URISyntaxException
 	{
-		this.href = new URI(response.getHref().get(0));
+		this.href = new URI(response.getHref());
+		//this.href = new URI(response.getHref().get(0));
 		this.creation = SardineUtil.parseDate(this.getCreationDate(response));
 		this.modified = SardineUtil.parseDate(this.getModifiedDate(response));
 		this.contentType = this.getContentType(response);
@@ -117,18 +118,21 @@ public class DavResource
 	 */
 	private String getModifiedDate(Response response)
 	{
-		List<Propstat> list = response.getPropstat();
-		if (list.isEmpty()) {
+		Propstat list = response.getPropstat();
+		if(list.equals("") || null == list) {
+			return null;
+		}
+		return list.getProp().getGetlastmodified();
+		/*if (list.isEmpty()) {
 			return null;
 		}
         for(Propstat propstat: list) {
             Getlastmodified glm = propstat.getProp().getGetlastmodified();
-            if ((glm != null) && (glm.getContent().size() == 1))
-            {
+            if ((glm != null) && (glm.getContent().size() == 1)) {
                 return glm.getContent().get(0);
             }
         }
-		return null;
+		return null; */
 	}
 
 	/**
@@ -140,7 +144,12 @@ public class DavResource
 	 */
 	private String getCreationDate(Response response)
 	{
-        List<Propstat> list = response.getPropstat();
+		Propstat list = response.getPropstat();
+		if(list.equals("") || null == list) {
+			return null;
+		}
+		return list.getProp().getCreationdate();
+        /*List<Propstat> list = response.getPropstat();
         if (list.isEmpty()) {
             return null;
         }
@@ -151,7 +160,7 @@ public class DavResource
                 return gcd.getContent().get(0);
             }
         }
-		return null;
+		return null;*/
 	}
 
 	/**
@@ -164,7 +173,12 @@ public class DavResource
 	 */
 	private String getContentType(Response response)
 	{
-		// Make sure that directories have the correct content type.
+		Propstat list = response.getPropstat();
+		if(list.equals("") || null == list) {
+			return null;
+		}
+		return list.getProp().getGetcontenttype();
+		/*// Make sure that directories have the correct content type.
 		List<Propstat> list = response.getPropstat();
 		if (list.isEmpty()) {
 			return null;
@@ -185,7 +199,7 @@ public class DavResource
                 }
             }
         }
-		return DEFAULT_CONTENT_TYPE;
+		return DEFAULT_CONTENT_TYPE;*/
 	}
 
 	/**
@@ -197,7 +211,8 @@ public class DavResource
 	 */
 	private long getContentLength(Response response)
 	{
-		List<Propstat> list = response.getPropstat();
+		return -1;
+		/*List<Propstat> list = response.getPropstat();
 		if (list.isEmpty()) {
 			return DEFAULT_CONTENT_LENGTH;
 		}
@@ -214,7 +229,7 @@ public class DavResource
                 }
             }
         }
-		return DEFAULT_CONTENT_LENGTH;
+		return DEFAULT_CONTENT_LENGTH;*/
 	}
 
 	/**
@@ -226,7 +241,12 @@ public class DavResource
 	 */
 	private String getEtag(Response response)
 	{
-		List<Propstat> list = response.getPropstat();
+		Propstat list = response.getPropstat();
+		if(list.equals("") || null == list) {
+			return null;
+		}
+		return list.getProp().getGetetag();
+		/*List<Propstat> list = response.getPropstat();
 		if (list.isEmpty()) {
             return null;
         }
@@ -237,7 +257,7 @@ public class DavResource
                 return etag.getContent().get(0);
             }
         }
-		return null;
+		return null;*/
 	}
 
 	/**
@@ -250,7 +270,8 @@ public class DavResource
 	 */
 	private Map<QName, String> getCustomProps(Response response)
 	{
-		List<Propstat> list = response.getPropstat();
+		return null;
+		/*List<Propstat> list = response.getPropstat();
 		if (list.isEmpty()) {
 			return null;
 		}
@@ -282,7 +303,7 @@ public class DavResource
 
             }
         }
-		return customPropsMap;
+		return customPropsMap;*/
 	}
 
 	/**
@@ -380,8 +401,7 @@ public class DavResource
 				path = path.substring(0, path.length() - 1);
 			}
 			return path.substring(path.lastIndexOf('/') + 1);
-		} catch (StringIndexOutOfBoundsException e)
-		{
+		} catch (StringIndexOutOfBoundsException e) {
             log.warn(String.format("Failed to parse name from path %s", path));
 			return null;
 		}

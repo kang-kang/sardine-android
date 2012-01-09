@@ -15,6 +15,8 @@ import java.util.List;
 //import javax.xml.bind.annotation.XmlRootElement;
 //import javax.xml.bind.annotation.XmlType;
 
+import org.simpleframework.xml.ElementList;
+
 
 /**
  * <p>Java class for anonymous complex type.
@@ -42,9 +44,10 @@ import java.util.List;
 //@XmlRootElement(name = "lockdiscovery")
 public class Lockdiscovery {
 
+	/*@ElementList
     protected List<Activelock> activelock;
 
-    /**
+    *//**
      * Gets the value of the activelock property.
      * 
      * <p>
@@ -65,12 +68,12 @@ public class Lockdiscovery {
      * {@link Activelock }
      * 
      * 
-     */
+     *//*
     public List<Activelock> getActivelock() {
         if (activelock == null) {
             activelock = new ArrayList<Activelock>();
         }
         return this.activelock;
-    }
+    }*/
 
 }

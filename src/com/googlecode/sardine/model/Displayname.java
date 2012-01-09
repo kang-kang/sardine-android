@@ -10,6 +10,8 @@ package com.googlecode.sardine.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.simpleframework.xml.ElementList;
 //import javax.xml.bind.annotation.XmlAccessType;
 //import javax.xml.bind.annotation.XmlAccessorType;
 //import javax.xml.bind.annotation.XmlMixed;
@@ -43,6 +45,7 @@ import java.util.List;
 public class Displayname {
 
 //    @XmlMixed
+	@ElementList
     protected List<String> content;
 
     /**
